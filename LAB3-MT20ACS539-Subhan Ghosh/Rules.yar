@@ -17,5 +17,5 @@ rule BanLoad
         $indicators_of_compromise2 = "F:\\Sistema\\Drivers-Denis\\FileDelete\\FileDelete\\x64\\Debug\\B.pdb"
 
     condition:
-        ($kernel_driver1 and $kernel_driver2) and ($certificate1 or $certificate2 or $certificate3 or $certificate4 or $certificate5) and ($indicators_of_compromise1 or $indicators_of_compromise2)
+        (all of ($kernel_driver*)) and (1 of $certificate*) and (1 of $indicators_of_compromise*)
 }
