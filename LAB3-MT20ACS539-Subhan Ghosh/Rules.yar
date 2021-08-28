@@ -4,7 +4,8 @@ rule BanLoad
 	FileType = Trojan
 		
     strings:
-        $kernel_driver1 = "IrpFileDelete"
+        $url = /"http://th.symcb.com"
+	$kernel_driver1 = "IrpFileDelete"
 	$kernel_driver2 = "ntoskrnl.exe"
 		
         $certificate1 = "M2 AGRO DESENVOLVIMENTO DE SISTEMAS LTDA"
@@ -17,5 +18,5 @@ rule BanLoad
         $indicators_of_compromise2 = "F:\\Sistema\\Drivers-Denis\\FileDelete\\FileDelete\\x64\\Debug\\B.pdb"
 
     condition:
-        (all of ($kernel_driver*)) and (1 of $certificate*) and (1 of $indicators_of_compromise*)
+        $url and (all of ($kernel_driver*)) and (1 of $certificate*) and (1 of $indicators_of_compromise*)
 }
