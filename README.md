@@ -1,4 +1,4 @@
 Lab for differnt malware family analysis
-1. Banload \n
-2. Nanocore \n
-3. Melissa \n
+1. Banload
+2. Nanocore
+3. Melissa
